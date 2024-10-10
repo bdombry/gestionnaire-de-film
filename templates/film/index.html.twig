@@ -1,0 +1,22 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les films{% endblock %}
+
+{% block body %}
+    <ul>
+    {% for film in films %}
+        <li>
+            {% if film.slug %}
+                <a href="{{ path('film.show_by_slug', {slug: film.slug}) }}">
+                    {{ film.title }}
+                </a>
+            {% else %}
+                {{ film.title }} (Slug non défini)
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

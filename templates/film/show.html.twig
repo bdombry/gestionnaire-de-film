@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ film.title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ film.title }}</h1>
+
+    <p>{{ film.content | nl2br }}</p>
+{% endblock %}
